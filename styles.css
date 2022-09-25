@@ -1,0 +1,14 @@
+/** @format */
+
+body {
+	font-family: sans-serif;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(16, 79, 173);
+}
+
+h3 {
+	color: #fff;
+}
