@@ -90,3 +90,21 @@
     	}
     }
     ```
+
+-   `Log of a power rule`
+
+    Finding the power of 2 between 0 and 100 the complexity of the algorithms is
+    O(log n)
+
+    The O(log 100 ) = log (100) to base 2 = 6.643 856 190
+    The O(log 1000) = log (1000) to base 2 = 9.965 784 285
+
+    ```js
+     function printThePowerOf2ToN (n) {
+            /**NB` i should never be 0 or you will be stuck in an infinite loop
+             * */
+            for(let i = 2; i < n; i = i * 2) {
+                  console.log(`The power of two is ${i})
+            }
+     }
+    ```
