@@ -1,15 +1,13 @@
 /** @format */
 import {
-	printALlNosBtnZeron,
-	exampleQuadratic,
-	exampleCubic,
-	exampleLogarithimic
-} from './bigo.js';
+	getFibonacciAtNPositionIterative,
+	getFibonacciAtNPositionRecursive
+} from './fibonacci.js';
 
 // printALlNosBtnZeron( 100 );
 
-console.time('execution');
-// exampleQuadratic(100);
-// exampleCubic(100);
-exampleLogarithimic(1000);
-console.timeEnd('execution');
+// console.time('execution');
+// getFibonacciAtNPositionIterative(8); //21
+const value = getFibonacciAtNPositionRecursive(8);
+console.log(`The fibonacci of 8 is ${value}`);
+// console.timeEnd('execution');
