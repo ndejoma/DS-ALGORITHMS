@@ -4,7 +4,7 @@ import {
 	checkIsPalindromeByReversingStr
 } from './palindrome.js';
 
-let myString = 'mm';
+let myString = 'ada';
 
 //check if a word is palindrome that is if the word is reverse it will be the same
 const isPalindrome = checkIsPalindromeByRecursion(myString);
