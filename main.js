@@ -1,28 +1,7 @@
 /** @format */
-import {
-	checkIsPalindromeByRecursion,
-	checkIsPalindromeByReversingStr
-} from './palindrome.js';
 
-let myString = 'ada';
+import { findTheTwoMaximumNo } from './twoMax.js';
 
-//check if a word is palindrome that is if the word is reverse it will be the same
-const isPalindrome = checkIsPalindromeByRecursion(myString);
-console.log(
-	`The string ${myString} is ${
-		isPalindrome ? 'a' : 'not a'
-	}  palindrome checked using recursion`
-);
+let nums = [6, 57, 58, 400, 31, 3, 78];
 
-const isPalindrome2 = checkIsPalindromeByReversingStr(myString);
-console.log(
-	`The string ${myString} is ${
-		isPalindrome2 ? 'a' : 'not'
-	}  palindrome checked using reversing`
-);
-
-window.sayMyName = function (name) {
-	console.log(`Your name is ${name}`);
-};
-
-sayMyName('Kamauchu');
+findTheTwoMaximumNo(nums);
