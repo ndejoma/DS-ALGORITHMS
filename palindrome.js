@@ -32,6 +32,10 @@ export const checkIsPalindromeByReversingStr = str => {
 
 let currentWord;
 export const checkIsPalindromeByRecursion = str => {
+	if (str.length === 2) {
+		throw new Error('Cannot check a palindrome for that');
+	}
+
 	if (str.length === 1) {
 		return true;
 	}
