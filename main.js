@@ -1,5 +1,5 @@
 /** @format */
-import { isSame } from './frequency-counter.js';
+import { isSame, isSameRefactor } from './frequency-counter.js';
 
 let nums = [6, 57, 58, 400, 31, 3, 78];
 let numsSquaredSorted = nums
@@ -19,6 +19,5 @@ let numsSquaredSorted = nums
 			return 0;
 		}
 	});
-console.log(numsSquaredSorted);
-const isTrueSame = isSame(nums, numsSquaredSorted);
-console.log(isTrueSame);
+const isTrueSame = isSameRefactor([1, 2, 3, 3, 5], [1, 25, 4, 9, 9]);
+console.log(isTrueSame, 'Same');
