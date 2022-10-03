@@ -8,8 +8,13 @@
 
 export const isSame = (arr1, arr2) => {
 	let isSame;
+	//if the two arrays are not of the same length return false, they must be of the same length/frequency
+	if (arr1.length !== arr2.length) {
+		return false;
+	}
 	for (let i = 0; i < arr1.length; i++) {
-		if (arr1[i] * 2 === arr2[i]) {
+        const squaredNumber = arr1[ i ] ** 2;
+		if (arr2.includes(squaredNumber)) {
 			isSame = true;
 		} else {
 			isSame = false;
@@ -18,5 +23,3 @@ export const isSame = (arr1, arr2) => {
 	//return the value if true;
 	return isSame;
 };
-
-
