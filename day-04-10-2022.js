@@ -26,3 +26,41 @@ export const countAStringsChar = (str, charToCount) => {
 	console.log(charCount, 'The counts');
 	return charCount;
 };
+
+/***
+ * Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+ */
+
+const getCharCountMap = str => {
+	if (!str) {
+		throw new Error('Cannlt be empty');
+	}
+
+	const charCountMap = {};
+
+	for (let char of str) {
+		charCountMap[char] = charCountMap[char] ? charCountMap[char] + 1 : 1;
+	}
+
+	return charCountMap;
+};
+
+export const areAnagrams = (str1, str2) => {
+	//if the two string don;t have the same length they cannot be anagrams
+	if (str1.length !== str2.length) {
+		return false;
+	}
+
+	//the isAnagram
+	let isAnagram;
+
+	//we can count the individual string in both
+	const str1CharCount = getCharCountMap(str1);
+	const str2CharCount = getCharCountMap(str2);
+
+	//loop over the two charCount and compare their values
+	for (let key in str1CharCount) {
+		isAnagram = str1CharCount[key] === str2CharCount[key] ? true : false;
+	}
+	return isAnagram;
+};
