@@ -1,4 +1,4 @@
 /** @format */
-import { countStringChars } from './day-04-10-2022.js';
+import { countAStringsChar } from './day-04-10-2022.js';
 
-countStringChars('ann');
+countAStringsChar('annnjagi', 'n');

@@ -5,17 +5,24 @@
  * @format
  */
 
-export const countStringChars = str => {
+export const countAStringsChar = (str, charToCount) => {
 	if (!str) {
 		throw new Error('Cannot count an empty string');
 	}
-	const charMap = {};
+	//if the string does not have the char bail out to avoi wasting computation time
+	if (!str.includes(charToCount)) {
+		return 0;
+	}
+
+	let charCount = 0;
 
 	//loop over the characters and increment the the count of each character string
 	for (let char of str) {
-		//if the character count is not defined set it to one else increment it by one
-		charMap[char] = charMap[char] ? charMap[char] + 1 : 1;
+		if (char === charToCount) {
+			//increment the count of the string
+			charCount += 1;
+		}
 	}
-	console.log(charMap);
-	return charMap;
+	console.log(charCount, 'The counts');
+	return charCount;
 };
