@@ -53,3 +53,31 @@ export const getFibonacciAtNPositionRecursive = (n = 6) => {
 		getFibonacciAtNPositionRecursive(n - 2)
 	);
 };
+
+/***
+ * Solving the fibonacci sequence with memoization
+ * Memeoization is a technique use to store the result of a previous computation
+ */
+
+export const fibonacciMemoized = n => {
+	//a object that maps the values
+	const memoMap = {
+		0: 0,
+		1: 1,
+		2: 1
+	};
+
+	const fibonacci = (n, memoMap) => {
+		if (memoMap[n] !== undefined) {
+			console.log( memoMap, 'Memo map when defined' );
+			console.log(`**** The value of n is ${n}`);
+			return memoMap[n];
+		} else {
+			console.log( memoMap, 'Memomap when undefined' );
+			console.log(`##### THe value of n is ${n}`);
+			memoMap[n] = fibonacci(n - 1, memoMap) + fibonacci(n - 2, memoMap);
+			return memoMap[n];
+		}
+	};
+	return fibonacci(n, memoMap);
+};
