@@ -59,8 +59,8 @@ export const areAnagrams = (str1, str2) => {
 	const str2CharCount = getCharCountMap(str2);
 
 	//loop over the two charCount and compare their values
-	for (let key in str1CharCount) {
-		isAnagram = str1CharCount[key] === str2CharCount[key] ? true : false;
+	for (let [key, value] of Object.entries(str1CharCount)) {
+		isAnagram = value === str2CharCount[key] ? true : false;
 	}
 	return isAnagram;
 };
