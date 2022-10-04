@@ -33,7 +33,7 @@ export const countAStringsChar = (str, charToCount) => {
 
 const getCharCountMap = str => {
 	if (!str) {
-		throw new Error('Cannlt be empty');
+		throw new Error('Cannot be empty');
 	}
 
 	const charCountMap = {};
