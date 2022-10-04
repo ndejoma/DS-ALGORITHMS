@@ -1,6 +1,4 @@
 /** @format */
-import { fibonacciMemoized } from './fibonacci.js';
+import { countStringChars } from './day-04-10-2022.js';
 
-const value = fibonacciMemoized(6);
-
-console.log(`The fibonacci of ${6} is ${value}`);
+countStringChars('ann');
