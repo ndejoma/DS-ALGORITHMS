@@ -1,6 +1,5 @@
 /** @format */
-import { countAStringsChar, areAnagrams } from './day-04-10-2022.js';
+import { pairWithSumZero } from './day-05-10-2022.js';
 
-// countAStringsChar('annnjagi', 'n');
-const isAnagram = areAnagrams('qwerty', 'qywert');
-console.log(isAnagram, 'Statte');
+const firstPair = pairWithSumZero([0, 1, 2, 3]);
+console.log(firstPair); //[-3, 3]
