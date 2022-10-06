@@ -1,8 +1,9 @@
 /** @format */
-import { pairWithSumZero, pairWithSumZeroRefactor } from './day-05-10-2022.js';
+import {
+	countUniqueValues,
+	countUniqueValuesVersionTwo
+} from './day-06-10-2022.js';
 
-const firstPair = pairWithSumZero([0, 1, 2, 3]);
-console.log(firstPair); //[-3, 3]
+countUniqueValues([1, 1]);
 
-const value = pairWithSumZeroRefactor([-3, -2, 0, 3, 4, 5]);
-console.log(value); //[-3, 3]
+countUniqueValuesVersionTwo([0, 1, 3, 5]);
