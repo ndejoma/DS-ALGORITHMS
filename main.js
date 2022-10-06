@@ -1,9 +1,8 @@
 /** @format */
 import {
 	countUniqueValues,
-	countUniqueValuesVersionTwo
+	countUniqueValuesVersionTwo,
+	maxSubarraySum
 } from './day-06-10-2022.js';
 
-countUniqueValues([1, 1]);
-
-countUniqueValuesVersionTwo([0, 1, 3, 5]);
+maxSubarraySum([1, 2, 5, 2, 8, 7, 1, 5], 2);
