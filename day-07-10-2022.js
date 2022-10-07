@@ -81,3 +81,31 @@ export const maxSubarraySum = (arr, num) => {
 	console.log(maxSum); // [3, 4, 5, 7] shoulde be 12 when n is 2 and 19 when n is 4
 	return maxSum;
 };
+
+/***
+ * Divide and Conquer
+This pattern involves dividing a data set into smaller chunks and then repeating a process with a subset of data.
+
+This pattern can tremendously decrease time complexit
+ */
+
+/***
+ * Example one: Linear search or sequential search
+ * Given a sorted array of integers, write a function called search, that accepts a value and returns the index where the value passed to the function is located. If the value is not found, return -1
+ *
+ *  eg [-1, 0, 3, 4, 5, 8, 10]  the index of element 2 will be 3 and 5 will be 4
+ * This also known as linear search will a time complecity of O(n) as swe have to loop over all the items in the array in the worst case scenario t
+ * To find the 18 we have to loop over the array and return -1 since it will not be found
+ */
+
+export const linearSearch = (arr, elToFind) => {
+	let foundIdx = -1;
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] === elToFind) {
+			foundIdx = i;
+			//break out of the loop there is no need to continue iterating
+			break;
+		}
+	}
+	return foundIdx;
+};
