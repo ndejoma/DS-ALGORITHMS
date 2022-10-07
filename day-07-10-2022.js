@@ -109,3 +109,61 @@ export const linearSearch = (arr, elToFind) => {
 	}
 	return foundIdx;
 };
+
+/***
+ * Binary search which uses Divide and Conquer technique
+ * It has Big-o of O(log n) assume we have 32 items we would di
+ *           32
+ *        16 - 16         - 1
+ *    8 -   8    8  -  8  - 2
+ *    4 - 4 4 -4 4 - 4 4-4 - 3
+ *   2- 2 2-2 and so on - 4
+ *  1-1 and so on       -5
+ *
+ * The log(32) to base2 is 5 thus The big-O become O(log 32) thus O(log n)
+ */
+
+export const binarySearch = (arr, elToFind) => {
+	//let the minumum value i the sorted array to be that with index 0
+	if (arr.length === 0) {
+		return -1;
+	}
+
+	if (arr.length === 1) {
+		if (arr[0] === elToFind) {
+			return 0;
+		}
+		return -1;
+	}
+
+	let minIdx = 0;
+	let maxIdx = arr.length - 1;
+
+	//when the minIdx still less than or equal to maxIdx
+	while (minIdx <= maxIdx) {
+		//for an arr [1, 2, 3, 4, 5] the middleIdx will be (0 + 4) / 2 is equal to 2
+		let middleIdx = Math.floor((minIdx + maxIdx) / 2);
+		//get the currentMiddle items
+		//in the first iteation [1, 2, 3, 4, 5] it will be arr[2] === 3
+		let currentMiddleEl = arr[middleIdx];
+
+		//if the element to find id greater than currentMiddle element find to the right
+		//set the min to be the element after middleIdx
+		if (elToFind > currentMiddleEl) {
+			//in our case if we are finding 4 the currentMiddleEl will be 3 at index 2 and so we set minIdx for the iteation to be 2 + 1 == 3 the minIdx will be 3
+			minIdx = middleIdx + 1;
+		} else if (elToFind < currentMiddleEl) {
+			/***
+			 * If the current element to find is less than Middle element which at index 2 and is 3
+			 * IF we were looking for 2 we would set the maxIdx to be 2 -1 willbe 1
+			 * SO maxIdx for the next iteration will be 1
+			 */
+			maxIdx = middleIdx - 1;
+		} else {
+			return middleIdx;
+		}
+	}
+
+	//otherwise return -1 the elememnt was not foudnd
+	return -1;
+};
