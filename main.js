@@ -1,8 +1,5 @@
 /** @format */
-import {
-	countUniqueValues,
-	countUniqueValuesVersionTwo,
-	maxSubarraySum
-} from './day-06-10-2022.js';
+import { maxSubarraySum } from './day-07-10-2022.js';
 
-maxSubarraySum([1, 2, 5, 2, 8, 7, 1, 5], 2);
+
+maxSubarraySum([3, 4, 5, 7], 4);
