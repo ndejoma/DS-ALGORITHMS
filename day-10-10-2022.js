@@ -22,6 +22,15 @@ export const sameFrequency = (num1, num2) => {
 	//convert the num to strings to became it an iterable since numbers are not iterable
 	let num1Str = `${num1}`;
 	let num2Str = `${num2}`;
+	//the is true variable
+	let isSameFrequency = false;
+
+	//if the the string length are different return false
+	// '123' and '3214' will return true so better check the lenth and terminate any futher execution of the function
+	if (num1Str.length !== num2Str.length) {
+		isSameFrequency = false;
+		return isSameFrequency;
+	}
 
 	//the map to keep track of the char counts in bot numbers
 	const num1FreqCounter = {};
@@ -45,12 +54,11 @@ export const sameFrequency = (num1, num2) => {
 		}
 	}
 
-	//the is true variable
-	let isSameFrequency = false;
-
 	//check if the char both map have the same frequency
 	for (let [key, value] of Object.entries(num1FreqCounter)) {
 		//check if the corresponding key in the num2FreqCounter has the same value and return true othersow return false
+		console.log(key, value);
+		console.log(num2FreqCounter[key], value);
 		if (num2FreqCounter[key] === value) {
 			isSameFrequency = true;
 		} else {
@@ -58,6 +66,5 @@ export const sameFrequency = (num1, num2) => {
 		}
 	}
 
-	console.log(isSameFrequency);
 	return isSameFrequency;
 };
