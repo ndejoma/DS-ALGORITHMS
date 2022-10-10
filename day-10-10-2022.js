@@ -68,3 +68,48 @@ export const sameFrequency = (num1, num2) => {
 
 	return isSameFrequency;
 };
+
+/***
+ * Frequency Counter / Multiple Pointers - areThereDuplicates
+Implement a function called, areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in.  
+You can solve this using the frequency counter pattern OR the multiple pointers pattern.
+
+Examples:
+
+areThereDuplicates(1, 2, 3) // false
+areThereDuplicates(1, 2, 2) // true 
+areThereDuplicates('a', 'b', 'c', 'a') // true 
+Restrictions:
+
+Time - O(n)
+
+Space - O(n)
+
+Bonus:
+
+Time - O(n log n)
+
+Space - O(1
+ */
+
+//use the rest parameter to collect the items passed into the function as an array (...params)
+//solution using frequency counter
+export const areThereDuplicates = (...items) => {
+	if (items.length === 0) {
+		return false;
+	}
+	const paramsCount = {};
+	let hasDuplicates;
+
+	for (let item of items) {
+		//check if there is a duplicate and return to stop execution no need of checking again
+		if (paramsCount[item]) {
+			hasDuplicates = true;
+			return hasDuplicates;
+		} else {
+			paramsCount[item] = 1;
+			hasDuplicates = false;
+		}
+	}
+	return hasDuplicates;
+};

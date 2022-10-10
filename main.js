@@ -1,5 +1,5 @@
 /** @format */
-import { sameFrequency } from './day-10-10-2022.js';
+import { areThereDuplicates } from './day-10-10-2022.js';
 
-const value = sameFrequency(848, 488);
-console.log(value, 'same what');
+const value = areThereDuplicates(1, 2, 3, 5, 6);
+console.log(value); //false
