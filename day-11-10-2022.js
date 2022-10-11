@@ -41,7 +41,7 @@ export const averagePair = (arr, numAvg) => {
 			 *   SO we decrement the the end by 1 which will become 2
 			 *
 			 * 4.For the next iteration the start = 0 the end is 2 the avg will become 1 + 4 = 2.5
-			 *  Now the avg === numAVg so the function returns and pauses execution
+			 *  Now the avg === numAVg so the function returns and break out of the loop
 			 *
 			 *
 			 */
