@@ -53,3 +53,62 @@ export const averagePair = (arr, numAvg) => {
 
 	return false;
 };
+
+/***
+ * Multiple Pointers - isSubsequence
+Write a function called isSubsequence which takes in two strings and checks whether the characters in the first string form a subsequence of the characters in the second string. In other words, the function should check whether the characters in the first string appear somewhere in the second string, without their order changing.
+
+Examples:
+
+isSubsequence('hello', 'hello world'); // true
+isSubsequence('sing', 'sting'); // true
+isSubsequence('abc', 'abracadabra'); // true
+isSubsequence('abc', 'acb'); // false (order matters)
+Your solution MUST have AT LEAST the following complexities:
+
+Time Complexity - O(N + M)
+
+Space Complexity - O(1)
+
+ */
+
+export const isSubsequence = (str1, str2) => {
+	let str1Count = 0;
+	let str2Count = 0;
+
+	if (!str1) {
+		return true;
+    }
+    
+    /***
+     * For a isSubsequence(abc, ahbkc)
+     * 
+     * In the first iteration st2Count = 0 and str2.length is 5
+     *   1.So str1[0] === str2[0] so increment the str1Count by 1 becomes 1
+     * 
+     *   2. In the second iteration str2Count === 0 and str2.length is 5
+     *   str1Count = 1  so str1[1] is not equal to str2[0] so we increment str2Count by 1 
+     *   to become 1
+     * 
+     *   3. and so on until the str1Count is equal to the str1.length which means all the characters in str1 and available in str2 so the function returns so we break out of the loop
+     * 
+     * 4. If str1Count never equal to str1.length so we loop over until we are done
+     * 
+     *   
+     */
+
+	while (str2Count < str2.length) {
+		if (str1[str1Count] === str2[str2Count]) {
+			str1Count++;
+		}
+
+		if (str1Count === str1.length) {
+			return true;
+		}
+
+		//otherwise increment the strCount
+		str2Count++;
+	}
+
+	return false;
+};
