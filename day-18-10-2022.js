@@ -78,7 +78,51 @@ export const isPrimeRefactored = n => {
 		if (n % i === 0 || n % (1 + 2) === 0) {
 			return false;
 		}
-    }
-    
+	}
+
 	return true;
+};
+
+/***
+ * MOdular exponentiation
+ * Given the number x, y and p where
+ *   x is the base
+ *  y is the exponent
+ *  p is the modulus
+ *  Used in the field iof Public-Key cryptography
+ */
+
+export const getModularExponentiation = (base, exponent, modulus) => {
+	if (modulus === 1) {
+		/***
+		 * For example (2, 3, 1)
+		 *  2 ** 3 we get 6 , so 6 % 1 === 0
+		 */
+		return 0;
+	}
+
+	/****
+	 * For example (2, 3, 3) 
+     * We expect the result to be 2 as 2 ** 3 is 8 8 % 3 === 2
+     * 
+     *  In our case
+     *  1. In the first iteration the value will be 1 and i = 0; base= is 2 exponent 3 and modulus 3
+     *    So value will be 
+     *    value =  (1 * 2) % 3 = 2 % 3 we get 2 and i is incremented to be 1
+     *  2. In the second iteration value==2 , i==1, base is 2 and the exponent is 3 and modulus is 3
+     *     So the value will be: 
+     *    value = (2 * 2) % 3 = 1 and i will become i = 1 + 1 = 2
+     * 
+     *  3. In the third iteration  value==2, i ==2, the exponent is 3 and the modulus is 3
+     *  So the value will be
+     *   value = (1 * 2) % 3 = 2 % 3 = 2 value becomes 2 and i becomes 3
+     *  4. THe next iteration is never run so we return a value of 2 from the function getModularExponent(2,3, 3) we get 2
+	 */
+
+	let value = 1;
+
+	for (let i = 0; i < exponent; i++) {
+		value = (value * base) % modulus;
+	}
+	return value;
 };
